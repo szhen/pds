@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+	<head>
+		<title> filler </title>
+		<meta charset="UTF-8">
+	</head>
+
+	<body>
+		{% if err == "error" %}
+		incorrect username or password<br>
+		{% elif err == "nouser" %}
+		no username found<br>
+		{% endif %}
+		<form method="post">
+			login<br>
+			username: <input type="text" placeholder="username" name="username"><br>
+			password: <input type="password" placeholder="password" name="password"><br>
+			<input type="submit" value="login">
+		</form>
+		<a href="{{ url_for('register') }}"> or register here </a>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+	<head>
+		<title> edit profile </title>
+		<meta charset="UTF-8">
+	</head>
+
+	<body>
+		<ul>
+			<li><a href="{{ url_for('home') }}"> Home </a></li>
+			<li><form action="{{ url_for('logout') }}" method='post'><input type="submit" value="logout"></form></li>
+			<li><form action="{{ url_for('remove') }}" method='post'><input type="submit" value="delete me"></form></li>
+		</ul>
+		{% if errormsg == "error" %}
+		incorrect password<br>
+		{% endif %}
+		<form action="{{ url_for('edit') }}" method='post'>
+			old password: <input type="password" placeholder="password" name="oldpassword"><br>
+			new password: <input type="password" placeholder="password" name="newpassword"><br>
+			<input type="submit" value="done">
+		</form>
+		following:<br>
+		<ul>
+			{% for f in following %}
+			<li>{{ f }}</li>
+			{% endfor %}
+		</ul>
+	</body>
+</html>

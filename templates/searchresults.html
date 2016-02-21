@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+	<head>
+		<title> search results </title>
+		<meta charset="UTF-8">
+	</head>
+
+	<body>
+		<ul>
+			<li><a href="{{ url_for('home') }}"> Home </a></li>
+			<li><form action="{{ url_for('logout') }}" method='post'><input type="submit" value="logout"></form></li>
+		</ul>
+		search results for: {{search}}<br>
+		<ul>
+		{% for users in username %}
+			<li>{{ users }} <form action="{{ url_for('follow') }}" method='post'>
+				<input type="hidden" name="following" value="{{users}}">
+				<input type="submit" value="follow"></form></li>
+		{% endfor %}
+		</ul>
+	</body>
+</html>

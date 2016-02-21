@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+	<head>
+		<title> register </title>
+		<meta charset="UTF-8">
+	</head>
+
+	<body>
+		{% if err == "error" %}
+		username already exists<br>
+		{% endif %}
+		<form method="post">
+			registration<br>
+			username: <input type="text" placeholder="username" name="username"><br>
+			password: <input type="password" placeholder="password" name="password"><br>
+			<input type="submit" value="register">
+		</form>
+	</body>
+</html>

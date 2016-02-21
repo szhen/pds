@@ -1,0 +1,20 @@
+Sui Zhen
+part 1
+
+- the python file is coded in python version 2.7, if 3.0 is installed the file might not work
+- little to no comments in the python file, my bad
+- needs a users/ and posts/ folder
+- no css file and no styling whatsoever, just plain html
+- webapp includes creating an account, logging in, following other users, and reading your following's post
+- user's info like password and who they are following are stored in files in the users/ directory
+	- passwords are stored in plaintext
+- user's posts are stored in other files in the posts/ directory
+	- posts are formatted by python's time.time()t<>ppost
+		- t<>p is used to separate the time and post by string.split()
+		- if a post contains "t<>p" anything after (including that t<>p) will not be displayed
+	- posts do not show who posted, only the 10 most recent posts by who the user is following
+- users can follow other users, if the user is following them already any subsequent follows will not break the system
+	- to view who you are following, you have to go to the edit profile page
+		- although you cannot unfollow (not implemented)
+- users can change their password in the edit profile page
+- a list of who the user is following is also in the edit profile page
